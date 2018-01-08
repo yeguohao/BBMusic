@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f2f4f5"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="0dp"
+        android:id="@+id/local_music"
+        style="@style/music_item_group">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t_actionbar_music_normal"/>
+
+        <TextView
+            android:text="本地音乐"
+            style="@style/music_item_title" />
+
+        <TextView
+            tools:text="(5)"
+            style="@style/music_item_hint" />
+
+    </LinearLayout>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/local_music"
+        style="@style/music_item_space" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/local_music"
+        android:id="@+id/recently_music"
+        style="@style/music_item_group">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t_actionbar_music_normal"/>
+
+        <TextView
+            android:text="最近播放"
+            style="@style/music_item_title" />
+
+        <TextView
+            tools:text="(28)"
+            style="@style/music_item_hint" />
+
+    </LinearLayout>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/recently_music"
+        style="@style/music_item_space" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/recently_music"
+        android:id="@+id/download_manage"
+        style="@style/music_item_group">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t_actionbar_music_normal"/>
+
+        <TextView
+            android:text="下载管理"
+            style="@style/music_item_title" />
+
+        <TextView
+            tools:text="(1)"
+            style="@style/music_item_hint" />
+
+    </LinearLayout>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/download_manage"
+        style="@style/music_item_space" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/download_manage"
+        android:id="@+id/my_transceiver"
+        style="@style/music_item_group">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t_actionbar_music_normal"/>
+
+        <TextView
+            android:text="我的电台"
+            style="@style/music_item_title" />
+
+        <TextView
+            tools:text="(0)"
+            style="@style/music_item_hint" />
+
+    </LinearLayout>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/my_transceiver"
+        style="@style/music_item_space" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/my_transceiver"
+        android:id="@+id/my_favorite"
+        style="@style/music_item_group">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t_actionbar_music_normal"/>
+
+        <TextView
+            android:text="我的收藏"
+            style="@style/music_item_title" />
+
+        <TextView
+            android:text="(专辑/歌手/视频/专栏)"
+            style="@style/music_item_hint" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
