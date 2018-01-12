@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         toolbar.setNavigationIcon(R.drawable.navigation);
 
+        setSelectedViewByCurrentPosition();
         adapter = new MainPagerAdapter(getFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -59,17 +60,8 @@ public class MainActivity extends AppCompatActivity
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (currentPosition == position) return;
                 if (currentView != null) currentView.setSelected(false);
-                if (position == 0) {
-                    music.setSelected(true);
-                    currentView = music;
-                } else if (position == 1) {
-                    discover.setSelected(true);
-                    currentView = discover;
-                } else {
-                    friends.setSelected(true);
-                    currentView = friends;
-                }
                 currentPosition = position;
+                setSelectedViewByCurrentPosition();
             }
 
             @Override
@@ -82,6 +74,19 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+    }
+
+    private void setSelectedViewByCurrentPosition() {
+        if (currentPosition == 0) {
+            music.setSelected(true);
+            currentView = music;
+        } else if (currentPosition == 1) {
+            discover.setSelected(true);
+            currentView = discover;
+        } else {
+            friends.setSelected(true);
+            currentView = friends;
+        }
     }
 
     @OnClick({ R.id.actionbar_music, R.id.actionbar_discover, R.id.actionbar_friends})
@@ -155,5 +160,17 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        currentPosition = savedInstanceState.getInt("currentPosition", 0);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("currentPosition", currentPosition);
     }
 }

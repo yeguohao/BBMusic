@@ -122,4 +122,82 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/create"
+        app:layout_constraintTop_toBottomOf="@id/my_favorite"
+        android:background="#e7e9e9"
+        android:layout_width="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:id="@+id/arr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/arr_right" />
+
+        <TextView
+            android:layout_marginStart="32dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="#5d5e5e"
+            android:text="创建的歌单"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_gravity="center_vertical|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/setting" />
+
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/create"
+        android:layout_width="match_parent"
+        android:id="@+id/create_recycler"
+        app:layoutManager="LinearLayoutManager"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:id="@+id/favorite"
+        app:layout_constraintTop_toBottomOf="@id/create_recycler"
+        android:background="#e7e9e9"
+        android:layout_width="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:id="@+id/b_arr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/arr_right" />
+
+        <TextView
+            android:layout_marginStart="32dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="#5d5e5e"
+            android:text="收藏的歌单"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_gravity="center_vertical|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/setting" />
+
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/favorite"
+        android:layout_width="match_parent"
+        android:id="@+id/favorite_recycler"
+        app:layoutManager="LinearLayoutManager"
+        android:layout_height="wrap_content"/>
+
 </android.support.constraint.ConstraintLayout>
